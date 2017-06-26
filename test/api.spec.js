@@ -2,10 +2,10 @@
 
 import {expect} from 'chai'
 import {checkContentType, getOptionalToken} from '../src'
-import {JsonWebToken} from 'rheactor-models'
+import {JsonWebToken} from 'models'
 import jwt from 'jsonwebtoken'
 import Promise from 'bluebird'
-const contentType = 'application/vnd.resourceful-humans.rheactor-aws-lambda.v1+json'
+const contentType = 'application/vnd.resourceful-humans.aws-lambda.v1+json'
 const tokenSecret = 'myapikey.apiuser.apipass'
 
 describe('api', () => {

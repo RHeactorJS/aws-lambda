@@ -1,5 +1,5 @@
 {
-  "name": "@resourcefulhumans/rheactor-aws-lambda",
+  "name": "@rheactorjs/aws-lambda",
   "version": "0.0.0-development",
   "description": "Core components for RESTful AWS lambda endpoints",
   "main": "dist/index.js",
@@ -17,7 +17,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/ResourcefulHumans/rheactor-aws-lambda.git"
+    "url": "https://github.com/RHeactorJS/aws-lambda.git"
   },
   "keywords": [
     "simple",
@@ -27,18 +27,18 @@
   "author": "Resourceful Humans GmbH <info@resourceful-humans.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ResourcefulHumans/rheactor-aws-lambda/issues"
+    "url": "https://github.com/RHeactorJS/aws-lambda/issues"
   },
-  "homepage": "https://github.com/ResourcefulHumans/rheactor-aws-lambda#readme",
+  "homepage": "https://github.com/RHeactorJS/aws-lambda#readme",
   "peerDependencies": {
     "bluebird": "^3.4.7",
     "jsonwebtoken": "^7.2.1",
-    "rheactor-models": "3.x >=3.2.2",
-    "rheactor-value-objects": "^10.0.0",
+    "models": "3.x >=3.2.2",
+    "value-objects": "^10.0.0",
     "tcomb": "^3.2.16"
   },
   "devDependencies": {
-    "@resourcefulhumans/rheactor-errors": "1.x",
+    "@rheactorjs/errors": "1.x",
     "babel-cli": "^6.22.2",
     "babel-eslint": "^7.1.1",
     "babel-preset-env": "^1.1.8",

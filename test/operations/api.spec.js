@@ -2,11 +2,11 @@
 
 import {expect} from 'chai'
 import {handler, apiIndexOperation, statusOperation} from '../../src'
-import {Status, Index, Link} from 'rheactor-models'
-import {URIValue} from 'rheactor-value-objects'
+import {Status, Index, Link} from 'models'
+import {URIValue} from 'value-objects'
 import Promise from 'bluebird'
 
-const contentType = 'application/vnd.resourceful-humans.rheactor-aws-lambda.v1+json'
+const contentType = 'application/vnd.resourceful-humans.aws-lambda.v1+json'
 const environment = 'testing'
 const headers = {'Content-type': contentType}
 const mountURL = new URIValue('https://api.example.com/')

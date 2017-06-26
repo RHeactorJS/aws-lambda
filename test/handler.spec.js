@@ -2,10 +2,10 @@
 
 import {expect} from 'chai'
 import {handler, apiIndexOperation, statusOperation} from '../src'
-import {HttpProblem, Status, Link, Index} from 'rheactor-models'
-import {URIValue} from 'rheactor-value-objects'
+import {HttpProblem, Status, Link, Index} from 'models'
+import {URIValue} from 'value-objects'
 
-const contentType = 'application/vnd.resourceful-humans.rheactor-aws-lambda.v1+json'
+const contentType = 'application/vnd.resourceful-humans.aws-lambda.v1+json'
 const environment = 'testing'
 const tokenSecretOrPrivateKey = 'foo'
 const headers = {'Content-type': contentType}
@@ -39,7 +39,7 @@ describe('index', () => {
           'Content-Type': contentType,
           'Access-Control-Allow-Origin': '*'
         })
-        const expectedProblem = new HttpProblem(new URIValue('https://github.com/ResourcefulHumans/rheactor-aws-lambda#Error'), 'Unknown operation "/some/operation"', 404)
+        const expectedProblem = new HttpProblem(new URIValue('https://github.com/RHeactorJS/aws-lambda#Error'), 'Unknown operation "/some/operation"', 404)
         const body = JSON.parse(res.body)
         const sentProblem = HttpProblem.fromJSON(body)
         expect(sentProblem.name).to.equal(expectedProblem.name)
@@ -71,7 +71,7 @@ describe('index', () => {
           'Content-Type': contentType,
           'Access-Control-Allow-Origin': '*'
         })
-        const expectedProblem = new HttpProblem(new URIValue('https://github.com/ResourcefulHumans/rheactor-aws-lambda#Error'), 'Method not allowed: "DELETE"', 405)
+        const expectedProblem = new HttpProblem(new URIValue('https://github.com/RHeactorJS/aws-lambda#Error'), 'Method not allowed: "DELETE"', 405)
         const body = JSON.parse(res.body)
         const sentProblem = HttpProblem.fromJSON(body)
         expect(sentProblem.name).to.equal(expectedProblem.name)
@@ -103,7 +103,7 @@ describe('index', () => {
           'Content-Type': contentType,
           'Access-Control-Allow-Origin': '*'
         })
-        const expectedProblem = new HttpProblem(new URIValue('https://github.com/ResourcefulHumans/rheactor-aws-lambda#Error'), 'Unsupported operation "GET /status"', 400)
+        const expectedProblem = new HttpProblem(new URIValue('https://github.com/RHeactorJS/aws-lambda#Error'), 'Unsupported operation "GET /status"', 400)
         const body = JSON.parse(res.body)
         const sentProblem = HttpProblem.fromJSON(body)
         expect(sentProblem.name).to.equal(expectedProblem.name)
@@ -135,7 +135,7 @@ describe('index', () => {
           'Content-Type': contentType,
           'Access-Control-Allow-Origin': '*'
         })
-        const expectedProblem = new HttpProblem(new URIValue('https://github.com/ResourcefulHumans/rheactor-aws-lambda#SyntaxError'), '', 400)
+        const expectedProblem = new HttpProblem(new URIValue('https://github.com/RHeactorJS/aws-lambda#SyntaxError'), '', 400)
         const body = JSON.parse(res.body)
         const sentProblem = HttpProblem.fromJSON(body)
         expect(sentProblem.name).to.equal(expectedProblem.name)

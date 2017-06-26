@@ -1,5 +1,5 @@
 import jwt from 'jsonwebtoken'
-import {JsonWebToken} from 'rheactor-models'
+import {JsonWebToken} from 'models'
 import Promise from 'bluebird'
 import {String as StringType} from 'tcomb'
 
