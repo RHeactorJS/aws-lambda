@@ -5,7 +5,7 @@ import {handler, apiIndexOperation, statusOperation} from '../src'
 import {HttpProblem, Status, Link, Index} from 'models'
 import {URIValue} from 'value-objects'
 
-const contentType = 'application/vnd.resourceful-humans.aws-lambda.v1+json'
+const contentType = 'application/vnd.rheactorjs.aws-lambda.v1+json'
 const environment = 'testing'
 const tokenSecretOrPrivateKey = 'foo'
 const headers = {'Content-type': contentType}
