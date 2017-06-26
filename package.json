@@ -31,10 +31,10 @@
   },
   "homepage": "https://github.com/RHeactorJS/aws-lambda#readme",
   "peerDependencies": {
+    "@rheactorjs/models": "1.x",
+    "@rheactorjs/value-objects": "1.x",
     "bluebird": "^3.4.7",
     "jsonwebtoken": "^7.2.1",
-    "models": "3.x >=3.2.2",
-    "value-objects": "^10.0.0",
     "tcomb": "^3.2.16"
   },
   "devDependencies": {
