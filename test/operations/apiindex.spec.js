@@ -2,8 +2,8 @@
 
 import {expect} from 'chai'
 import {apiIndexOperation} from '../../src'
-import {Status, Index, Link} from 'models'
-import {URIValue} from 'value-objects'
+import {Status, Index, Link} from '@rheactorjs/models'
+import {URIValue} from '@rheactorjs/value-objects'
 
 describe('apiindex', () => {
   it('should create a list of links', () => {

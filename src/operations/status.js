@@ -1,5 +1,5 @@
 import Promise from 'bluebird'
-import {Status} from 'models'
+import {Status} from '@rheactorjs/models'
 
 /**
  * @param {String} version

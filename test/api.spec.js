@@ -2,7 +2,7 @@
 
 import {expect} from 'chai'
 import {checkContentType, getOptionalToken} from '../src'
-import {JsonWebToken} from 'models'
+import {JsonWebToken} from '@rheactorjs/models'
 import jwt from 'jsonwebtoken'
 import Promise from 'bluebird'
 const contentType = 'application/vnd.rheactorjs.aws-lambda.v1+json'

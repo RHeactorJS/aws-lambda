@@ -2,8 +2,8 @@
 
 import {expect} from 'chai'
 import {handler, apiIndexOperation, statusOperation} from '../src'
-import {HttpProblem, Status, Link, Index} from 'models'
-import {URIValue} from 'value-objects'
+import {HttpProblem, Status, Link, Index} from '@rheactorjs/models'
+import {URIValue} from '@rheactorjs/value-objects'
 
 const contentType = 'application/vnd.rheactorjs.aws-lambda.v1+json'
 const environment = 'testing'

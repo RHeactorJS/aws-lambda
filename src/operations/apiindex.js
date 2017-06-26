@@ -1,5 +1,5 @@
 import Promise from 'bluebird'
-import {IndexType} from 'models'
+import {IndexType} from '@rheactorjs/models'
 
 /**
  * @param {Index} index

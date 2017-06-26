@@ -1,7 +1,7 @@
 import Promise from 'bluebird'
 import {checkContentType, getOptionalToken} from './api'
-import {HttpProblem} from 'models'
-import {URIValue} from 'value-objects'
+import {HttpProblem} from '@rheactorjs/models'
+import {URIValue} from '@rheactorjs/value-objects'
 
 /**
  * @param {String} contentType
