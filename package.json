@@ -30,7 +30,7 @@
     "url": "https://github.com/RHeactorJS/aws-lambda/issues"
   },
   "homepage": "https://github.com/RHeactorJS/aws-lambda#readme",
-  "peerDependencies": {
+  "dependencies": {
     "@rheactorjs/models": "1.x",
     "@rheactorjs/value-objects": "1.x",
     "bluebird": "^3.4.7",
