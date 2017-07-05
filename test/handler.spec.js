@@ -37,7 +37,8 @@ describe('index', () => {
         expect(res.statusCode).to.equal(404)
         expect(res.headers).to.deep.equal({
           'Content-Type': contentType,
-          'Access-Control-Allow-Origin': '*'
+          'Access-Control-Allow-Origin': '*',
+          'Access-Control-Allow-Headers': 'Content-Length'
         })
         const expectedProblem = new HttpProblem(new URIValue('https://github.com/RHeactorJS/aws-lambda#Error'), 'Unknown operation "/some/operation"', 404)
         const body = JSON.parse(res.body)
@@ -69,7 +70,8 @@ describe('index', () => {
         expect(res.statusCode).to.equal(405)
         expect(res.headers).to.deep.equal({
           'Content-Type': contentType,
-          'Access-Control-Allow-Origin': '*'
+          'Access-Control-Allow-Origin': '*',
+          'Access-Control-Allow-Headers': 'Content-Length'
         })
         const expectedProblem = new HttpProblem(new URIValue('https://github.com/RHeactorJS/aws-lambda#Error'), 'Method not allowed: "DELETE"', 405)
         const body = JSON.parse(res.body)
@@ -101,7 +103,8 @@ describe('index', () => {
         expect(res.statusCode).to.equal(400)
         expect(res.headers).to.deep.equal({
           'Content-Type': contentType,
-          'Access-Control-Allow-Origin': '*'
+          'Access-Control-Allow-Origin': '*',
+          'Access-Control-Allow-Headers': 'Content-Length'
         })
         const expectedProblem = new HttpProblem(new URIValue('https://github.com/RHeactorJS/aws-lambda#Error'), 'Unsupported operation "GET /status"', 400)
         const body = JSON.parse(res.body)
@@ -133,7 +136,8 @@ describe('index', () => {
         expect(res.statusCode).to.equal(400)
         expect(res.headers).to.deep.equal({
           'Content-Type': contentType,
-          'Access-Control-Allow-Origin': '*'
+          'Access-Control-Allow-Origin': '*',
+          'Access-Control-Allow-Headers': 'Content-Length'
         })
         const expectedProblem = new HttpProblem(new URIValue('https://github.com/RHeactorJS/aws-lambda#SyntaxError'), '', 400)
         const body = JSON.parse(res.body)

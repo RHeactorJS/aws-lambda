@@ -25,7 +25,8 @@ export function handler (contentType, environment, tokenSecretOrPrivateKey, oper
       body: JSON.stringify(err || res),
       headers: {
         'Content-Type': contentType,
-        'Access-Control-Allow-Origin': '*'
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Headers': 'Content-Length'
       }
     })
   }

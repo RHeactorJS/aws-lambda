@@ -43,7 +43,8 @@ describe('API', () => {
           expect(res.statusCode).to.equal(200)
           expect(res.headers).to.deep.equal({
             'Content-Type': contentType,
-            'Access-Control-Allow-Origin': '*'
+            'Access-Control-Allow-Origin': '*',
+            'Access-Control-Allow-Headers': 'Content-Length'
           })
           const body = JSON.parse(res.body)
           expect(body.$links.length).to.be.at.least(2)
@@ -76,7 +77,8 @@ describe('API', () => {
           expect(res.statusCode).to.equal(200)
           expect(res.headers).to.deep.equal({
             'Content-Type': contentType,
-            'Access-Control-Allow-Origin': '*'
+            'Access-Control-Allow-Origin': '*',
+            'Access-Control-Allow-Headers': 'Content-Length'
           })
           const body = JSON.parse(res.body)
           expect(body.status).to.equal('ok')
