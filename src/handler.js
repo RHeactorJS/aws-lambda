@@ -26,7 +26,7 @@ export function handler (contentType, environment, tokenSecretOrPrivateKey, oper
       headers: {
         'Content-Type': contentType,
         'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Headers': 'Content-Length'
+        'Access-Control-Expose-Headers': 'Content-Length'
       }
     })
   }

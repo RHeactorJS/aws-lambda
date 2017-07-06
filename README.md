@@ -11,3 +11,17 @@
 Core components for RESTful AWS lambda endpoints.
 
 See [`image-service`](https://github.com/RHeactorJS/image-service/blob/master/package.json) for a concrete usage example.
+
+## API Gateway
+
+APIs built with `aws-lambda` require additional setup on API Gateway.
+
+After creating an API Gateway API for the lambda by configure it as [proxy resource](https://docs.aws.amazon.com/console/apigateway/proxy-resource)
+the CORS configuration needs to be customized:
+
+Select the `/{proxy+}` resource and from the *Actions* drop-down select *Enable CORS*.  
+Add `Content-Length` to the `Access-Control-Allow-Headers` list.
+Put `'Content-Type'` in the `Access-Control-Expose-Headers` list under *Advanced*.  
+Click *Enable CORS and replace existing CORS headers*.
+
+Don't forget to deploy the API afterwards.
