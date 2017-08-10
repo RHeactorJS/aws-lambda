@@ -1,5 +1,7 @@
 # aws-lambda
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/RHeactorJS/aws-lambda.svg)](https://greenkeeper.io/)
+
 [![npm version](https://img.shields.io/npm/v/@rheactorjs/aws-lambda.svg)](https://www.npmjs.com/package/@rheactorjs/aws-lambda)
 [![Build Status](https://travis-ci.org/RHeactorJS/aws-lambda.svg?branch=master)](https://travis-ci.org/RHeactorJS/aws-lambda)
 [![monitored by greenkeeper.io](https://img.shields.io/badge/greenkeeper.io-monitored-brightgreen.svg)](http://greenkeeper.io/) 
