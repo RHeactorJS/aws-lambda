@@ -1,6 +1,5 @@
-/* global describe, it */
+/* global describe it expect */
 
-import {expect} from 'chai'
 import {handler, apiIndexOperation, statusOperation} from '../../src'
 import {Status, Index, Link} from '@rheactorjs/models'
 import {URIValue} from '@rheactorjs/value-objects'
@@ -40,16 +39,16 @@ describe('API', () => {
             })
         })
         .then(res => {
-          expect(res.statusCode).to.equal(200)
-          expect(res.headers).to.deep.equal({
+          expect(res.statusCode).toEqual(200)
+          expect(res.headers).toEqual({
             'Content-Type': contentType,
             'Access-Control-Allow-Origin': '*',
             'Access-Control-Expose-Headers': 'Content-Length'
           })
           const body = JSON.parse(res.body)
-          expect(body.$links.length).to.be.at.least(2)
+          expect(body.$links).toHaveLength(2)
           const statusLink = body.$links.filter(link => link.subject === Status.$context.toString())[0]
-          expect(statusLink.subject).to.equal(Status.$context.toString())
+          expect(statusLink.subject).toEqual(Status.$context.toString())
         })
     })
   })
@@ -74,16 +73,16 @@ describe('API', () => {
             })
         })
         .then(res => {
-          expect(res.statusCode).to.equal(200)
-          expect(res.headers).to.deep.equal({
+          expect(res.statusCode).toEqual(200)
+          expect(res.headers).toEqual({
             'Content-Type': contentType,
             'Access-Control-Allow-Origin': '*',
             'Access-Control-Expose-Headers': 'Content-Length'
           })
           const body = JSON.parse(res.body)
-          expect(body.status).to.equal('ok')
-          expect(body.version).to.match(/^0\.0\.0\+testing\.[0-9]+/)
-          expect(new Date(body.time).getTime()).to.be.most(Date.now())
+          expect(body.status).toEqual('ok')
+          expect(body.version).toMatch(/^0\.0\.0\+testing\.[0-9]+/)
+          expect(new Date(body.time).getTime()).toBeLessThanOrEqual(Date.now())
         })
     })
   })

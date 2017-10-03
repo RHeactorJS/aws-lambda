@@ -1,6 +1,5 @@
-/* global describe, it */
+/* global describe it expect */
 
-import {expect} from 'chai'
 import {handler, apiIndexOperation, statusOperation} from '../src'
 import {HttpProblem, Status, Link, Index} from '@rheactorjs/models'
 import {URIValue} from '@rheactorjs/value-objects'
@@ -33,9 +32,9 @@ describe('index', () => {
         headers,
         path
       }, null, (err, res) => {
-        expect(err).to.equal(null)
-        expect(res.statusCode).to.equal(404)
-        expect(res.headers).to.deep.equal({
+        expect(err).toEqual(null)
+        expect(res.statusCode).toEqual(404)
+        expect(res.headers).toEqual({
           'Content-Type': contentType,
           'Access-Control-Allow-Origin': '*',
           'Access-Control-Expose-Headers': 'Content-Length'
@@ -43,10 +42,10 @@ describe('index', () => {
         const expectedProblem = new HttpProblem(new URIValue('https://github.com/RHeactorJS/aws-lambda#Error'), 'Unknown operation "/some/operation"', 404)
         const body = JSON.parse(res.body)
         const sentProblem = HttpProblem.fromJSON(body)
-        expect(sentProblem.name).to.equal(expectedProblem.name)
-        expect(sentProblem.type.equals(expectedProblem.type)).to.equal(true)
-        expect(sentProblem.title).to.equal(expectedProblem.title)
-        expect(sentProblem.$context).to.equal(expectedProblem.$context)
+        expect(sentProblem.name).toEqual(expectedProblem.name)
+        expect(sentProblem.type.equals(expectedProblem.type)).toEqual(true)
+        expect(sentProblem.title).toEqual(expectedProblem.title)
+        expect(sentProblem.$context).toEqual(expectedProblem.$context)
         done()
       })
   })
@@ -66,9 +65,9 @@ describe('index', () => {
         path,
         body
       }, null, (err, res) => {
-        expect(err).to.equal(null)
-        expect(res.statusCode).to.equal(405)
-        expect(res.headers).to.deep.equal({
+        expect(err).toEqual(null)
+        expect(res.statusCode).toEqual(405)
+        expect(res.headers).toEqual({
           'Content-Type': contentType,
           'Access-Control-Allow-Origin': '*',
           'Access-Control-Expose-Headers': 'Content-Length'
@@ -76,10 +75,10 @@ describe('index', () => {
         const expectedProblem = new HttpProblem(new URIValue('https://github.com/RHeactorJS/aws-lambda#Error'), 'Method not allowed: "DELETE"', 405)
         const body = JSON.parse(res.body)
         const sentProblem = HttpProblem.fromJSON(body)
-        expect(sentProblem.name).to.equal(expectedProblem.name)
-        expect(sentProblem.type.equals(expectedProblem.type)).to.equal(true)
-        expect(sentProblem.title).to.equal(expectedProblem.title)
-        expect(sentProblem.$context).to.equal(expectedProblem.$context)
+        expect(sentProblem.name).toEqual(expectedProblem.name)
+        expect(sentProblem.type.equals(expectedProblem.type)).toEqual(true)
+        expect(sentProblem.title).toEqual(expectedProblem.title)
+        expect(sentProblem.$context).toEqual(expectedProblem.$context)
         done()
       })
   })
@@ -99,9 +98,9 @@ describe('index', () => {
         path,
         body
       }, null, (err, res) => {
-        expect(err).to.equal(null)
-        expect(res.statusCode).to.equal(400)
-        expect(res.headers).to.deep.equal({
+        expect(err).toEqual(null)
+        expect(res.statusCode).toEqual(400)
+        expect(res.headers).toEqual({
           'Content-Type': contentType,
           'Access-Control-Allow-Origin': '*',
           'Access-Control-Expose-Headers': 'Content-Length'
@@ -109,10 +108,10 @@ describe('index', () => {
         const expectedProblem = new HttpProblem(new URIValue('https://github.com/RHeactorJS/aws-lambda#Error'), 'Unsupported operation "GET /status"', 400)
         const body = JSON.parse(res.body)
         const sentProblem = HttpProblem.fromJSON(body)
-        expect(sentProblem.name).to.equal(expectedProblem.name)
-        expect(sentProblem.type.equals(expectedProblem.type)).to.equal(true)
-        expect(sentProblem.title).to.equal(expectedProblem.title)
-        expect(sentProblem.$context).to.equal(expectedProblem.$context)
+        expect(sentProblem.name).toEqual(expectedProblem.name)
+        expect(sentProblem.type.equals(expectedProblem.type)).toEqual(true)
+        expect(sentProblem.title).toEqual(expectedProblem.title)
+        expect(sentProblem.$context).toEqual(expectedProblem.$context)
         done()
       })
   })
@@ -132,9 +131,9 @@ describe('index', () => {
         path,
         body
       }, null, (err, res) => {
-        expect(err).to.equal(null)
-        expect(res.statusCode).to.equal(400)
-        expect(res.headers).to.deep.equal({
+        expect(err).toEqual(null)
+        expect(res.statusCode).toEqual(400)
+        expect(res.headers).toEqual({
           'Content-Type': contentType,
           'Access-Control-Allow-Origin': '*',
           'Access-Control-Expose-Headers': 'Content-Length'
@@ -142,10 +141,10 @@ describe('index', () => {
         const expectedProblem = new HttpProblem(new URIValue('https://github.com/RHeactorJS/aws-lambda#SyntaxError'), '', 400)
         const body = JSON.parse(res.body)
         const sentProblem = HttpProblem.fromJSON(body)
-        expect(sentProblem.name).to.equal(expectedProblem.name)
-        expect(sentProblem.type.equals(expectedProblem.type)).to.equal(true)
-        expect(sentProblem.title).to.match(/Unexpected token b/)
-        expect(sentProblem.$context).to.equal(expectedProblem.$context)
+        expect(sentProblem.name).toEqual(expectedProblem.name)
+        expect(sentProblem.type.equals(expectedProblem.type)).toEqual(true)
+        expect(sentProblem.title).toMatch(/Unexpected token b/)
+        expect(sentProblem.$context).toEqual(expectedProblem.$context)
         done()
       })
   })
@@ -165,8 +164,8 @@ describe('index', () => {
         path,
         body
       }, null, (err, res) => {
-        expect(err).to.equal(null)
-        expect(res.statusCode).to.equal(204)
+        expect(err).toEqual(null)
+        expect(res.statusCode).toEqual(204)
         done()
       })
   })
