@@ -9,7 +9,7 @@ import {String as StringType} from 'tcomb'
  * @returns {String}
  */
 export function header (headers, header) {
-  if (!headers || headers === null) return false
+  if (!headers) return false
   const lowerCaseHeaders = {}
   for (const k in headers) {
     lowerCaseHeaders[k.toLowerCase()] = headers[k]
