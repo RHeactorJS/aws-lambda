@@ -39,7 +39,7 @@
   },
   "devDependencies": {
     "@commitlint/cli": "^4.0.0",
-    "@commitlint/config-angular": "^4.2.0",
+    "@commitlint/config-angular": "^5.0.0",
     "@rheactorjs/errors": "1.x",
     "babel-cli": "^6.26.0",
     "babel-eslint": "^8.0.1",
