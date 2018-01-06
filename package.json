@@ -31,7 +31,7 @@
   },
   "homepage": "https://github.com/RHeactorJS/aws-lambda#readme",
   "dependencies": {
-    "@rheactorjs/models": "^2.0.3",
+    "@rheactorjs/models": "^3.0.0",
     "@rheactorjs/value-objects": "^1.0.4",
     "bluebird": "^3.5.1",
     "jsonwebtoken": "^8.1.0",
