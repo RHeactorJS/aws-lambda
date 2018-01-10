@@ -38,7 +38,7 @@
     "tcomb": "^3.2.24"
   },
   "devDependencies": {
-    "@commitlint/cli": "^5.2.0",
+    "@commitlint/cli": "^6.0.0",
     "@commitlint/config-angular": "^5.1.1",
     "@rheactorjs/errors": "^1.0.2",
     "babel-cli": "^6.26.0",
