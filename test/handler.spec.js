@@ -138,7 +138,7 @@ describe('index', () => {
           'Access-Control-Allow-Origin': '*',
           'Access-Control-Expose-Headers': 'Content-Length'
         })
-        const expectedProblem = new HttpProblem(new URIValue('https://github.com/RHeactorJS/aws-lambda#SyntaxError'), '', 400)
+        const expectedProblem = new HttpProblem(new URIValue('https://github.com/RHeactorJS/aws-lambda#SyntaxError'), 'foo', 400)
         const body = JSON.parse(res.body)
         const sentProblem = HttpProblem.fromJSON(body)
         expect(sentProblem.name).toEqual(expectedProblem.name)
